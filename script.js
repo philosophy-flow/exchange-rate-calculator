@@ -7,8 +7,6 @@ const currencyTwoVal = document.getElementById('currency-two-value');
 const swapButton = document.getElementById('swap');
 const rateInfo = document.getElementById('rate');
 
-https://api.exchangeratesapi.io/latest?base=USD
-
 function calculateExchange() {
   const url = 'https://api.exchangeratesapi.io/latest?';
   fetch(`${url}base=${currencyOneSelector.value}`)

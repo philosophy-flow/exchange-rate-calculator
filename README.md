@@ -1,1 +1,2 @@
-Exchange rate calculator using exchangeRate-API.
+Exchange rate calculator using exchange rates API published by European Central
+Bank.
