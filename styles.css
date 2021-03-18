@@ -1,3 +1,13 @@
+@keyframes spin-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100%  {
+    transform: rotate(359deg);
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,6 +25,28 @@ body {
   height: 100vh;
 
   text-align: center;
+
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 10px;
+  background-color: white;
+  padding: 20px;
+  margin: 20px;
+
+  background-color: rgb(235, 231, 231);
+  opacity: .9;
+}
+
+.spin-icon {
+  animation: spin-animation .8s;
 }
 
 h1 {
@@ -30,7 +62,7 @@ p {
 
 .exchange-container {
   border-radius: 10px;
-  background-color: rgba(119, 119, 119, 0.5);
+  background-color: rgba(119, 119, 119, .8);
   margin: 30px;
   padding: 15px;
   width: 325px;
@@ -92,6 +124,8 @@ p {
   font-size: .9em;
 }
 
+
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -104,7 +138,21 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+
+
 @media (max-width: 500px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  p {
+    font-size: .8em;
+    padding: 3px;
+  }
+
+  .main-container {
+    margin: 12px;
+  }
   .exchange-container {
     width: 90%;
   }
