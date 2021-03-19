@@ -32,6 +32,12 @@ function swap() {
   currencyOneSelector.value = currencyTwoSelector.value;
   currencyTwoSelector.value = tempValue;
   calculateExchange();
+
+  // Spin icon every time swap button is clicked
+  const spinIcon = document.getElementById('spin-icon');
+  spinIcon.classList.add('swap-spin');
+  spinIcon.classList.remove('spin-icon');
+  setTimeout(() => {spinIcon.classList.remove('swap-spin')}, 750);
 }
 
 
