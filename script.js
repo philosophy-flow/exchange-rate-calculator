@@ -15,20 +15,23 @@ function calculateExchange() {
       if (currencyOneSelector.value === currencyTwoSelector.value) {
         rate = 1;
       } else {
-        rate = data.rates[currencyTwoSelector.value].toFixed(2);
+        rate = data.rates[currencyTwoSelector.value].toFixed(4);
       }
 
       rateInfo.innerHTML =
         `1 ${currencyOneSelector.value} = ${rate} ${currencyTwoSelector.value}`;
 
-      currencyTwoVal.innerHTML = currencyOneVal.value * rate;
+      currencyTwoVal.innerHTML = (currencyOneVal.value * rate).toFixed(0);
     });
 }
 
 
 
 function swap() {
-  console.log('swapping yo');
+  const tempValue = currencyOneSelector.value;
+  currencyOneSelector.value = currencyTwoSelector.value;
+  currencyTwoSelector.value = tempValue;
+  calculateExchange();
 }
 
 
